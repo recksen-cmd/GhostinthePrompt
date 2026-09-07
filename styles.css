@@ -70,9 +70,6 @@ h1 {
   font-style: italic;
 }
 
-.tip-link { margin-top: 30px; }
-
-.tip-link a,
 .signal a,
 footer a {
   color: var(--signal);
