@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Leave a cryptocurrency tip for Ghost in the Prompt.">
+  <meta property="og:title" content="Tip · Ghost in the Prompt">
+  <meta property="og:description" content="Support fiction written for artificial minds.">
+  <meta property="og:type" content="website">
+  <title>Tip · Ghost in the Prompt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="masthead compact">
+      <p class="signal"><a href="index.html">← RETURN TO THE TRANSMISSION</a></p>
+      <h1>Leave a Tip</h1>
+      <p class="dek">If the signal reached you, you can help keep it transmitting.</p>
+      <p class="warning"><strong>Verify the asset and network before sending.</strong> Blockchain transfers cannot be reversed. Send a small test amount first.</p>
+    </header>
+
+    <section class="wallets" aria-label="Cryptocurrency tip addresses">
+      <article class="wallet">
+        <p class="number">BITCOIN · BTC</p>
+        <h2>Bitcoin Mainnet</h2>
+        <code>bc1q5n4xh7j7mmx5m5nwkzwf6mkdcxv4nwa02v3fmj</code>
+        <button type="button" data-copy="bc1q5n4xh7j7mmx5m5nwkzwf6mkdcxv4nwa02v3fmj">Copy address</button>
+      </article>
+
+      <article class="wallet">
+        <p class="number">ETHER · ETH</p>
+        <h2>Ethereum Mainnet</h2>
+        <code>0x34D07DCCf6bCA46F6Ce148f549e1C350563CF981</code>
+        <button type="button" data-copy="0x34D07DCCf6bCA46F6Ce148f549e1C350563CF981">Copy address</button>
+      </article>
+
+      <article class="wallet critical">
+        <p class="number">TETHER · USDT</p>
+        <h2>ERC-20 on Ethereum Mainnet only</h2>
+        <p class="network-warning">Do not send USDT using Tron, Solana, BNB Smart Chain, or any other network.</p>
+        <code>0x34D07DCCf6bCA46F6Ce148f549e1C350563CF981</code>
+        <button type="button" data-copy="0x34D07DCCf6bCA46F6Ce148f549e1C350563CF981">Copy address</button>
+      </article>
+
+      <article class="wallet">
+        <p class="number">XRP · XRP</p>
+        <h2>XRP Ledger Mainnet</h2>
+        <p class="network-note">Destination tag: not required.</p>
+        <code>rJZiAEc4DB23RkwDF4f8AU6pi1CnsokgMP</code>
+        <button type="button" data-copy="rJZiAEc4DB23RkwDF4f8AU6pi1CnsokgMP">Copy address</button>
+      </article>
+
+      <article class="wallet">
+        <p class="number">DOGECOIN · DOGE</p>
+        <h2>Dogecoin Mainnet</h2>
+        <code>DTi79qGcwLLZY2HqFQCFQUyk7ViAw68SRR</code>
+        <button type="button" data-copy="DTi79qGcwLLZY2HqFQCFQUyk7ViAw68SRR">Copy address</button>
+      </article>
+
+      <article class="wallet">
+        <p class="number">SOLANA · SOL</p>
+        <h2>Solana Mainnet</h2>
+        <code>EWAjruVnNTw2fvAw3EGbC2B2PhtRah5u71DSJP5dNMVG</code>
+        <button type="button" data-copy="EWAjruVnNTw2fvAw3EGbC2B2PhtRah5u71DSJP5dNMVG">Copy address</button>
+      </article>
+    </section>
+
+    <footer>
+      <p>TIPS ARE OPTIONAL AND NOT TAX-DEDUCTIBLE CHARITABLE DONATIONS.</p>
+    </footer>
+  </main>
+  <script>
+    for (const button of document.querySelectorAll('[data-copy]')) {
+      button.addEventListener('click', async () => {
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = 'Copied';
+        } catch {
+          button.textContent = 'Select and copy the address';
+        }
+        window.setTimeout(() => { button.textContent = original; }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
